@@ -4,11 +4,11 @@
     <div class="mCard" v-for="item in items" :key="item.id">
       <div class="content">
         <div class="imgContainer">
-          <h1>{{item.id}}</h1>
+          <h1>{{ item.id }}</h1>
         </div>
         <div class="mCard">
           <div class="intro">
-            <h5 class="font-weight-bold">{{item.name}}</h5>
+            <h5 class="font-weight-bold">{{ item.name }}</h5>
             <p>Points: 345</p>
             <p>Level: 5</p>
           </div>
@@ -56,6 +56,9 @@ h1 {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow, 0 3px 10px $shadow, 0 3px 10px $shadow;
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+  }
 }
 
 .imgContainer {
@@ -68,7 +71,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  h1{
+  h1 {
     margin: 0px;
     color: #fff;
   }

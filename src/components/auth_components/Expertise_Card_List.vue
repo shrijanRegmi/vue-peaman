@@ -67,6 +67,13 @@ $shadow: #ebebeb;
   min-height: 300px;
   background-color: #ff7533;
   box-shadow: 0 0 10px $shadow, 0 0 10px $shadow, 0 0 10px $shadow, 0 0 10px $shadow;
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 150px;
+  }
+
+  @media screen and (max-width: 668px) {
+    width: 100%;
+  }
 }
 
 .imgContainer {
@@ -83,6 +90,8 @@ $shadow: #ebebeb;
 .socialContainer {
   position: absolute;
   bottom: -20px;
+  left: 50%;
+  transform: translate(-50%);
   height: 40px;
   width: 75%;
   border-radius: 20px;
@@ -91,8 +100,7 @@ $shadow: #ebebeb;
 }
 .mCard {
   margin-top: 70px;
-
-  p{
+  p {
     line-height: 30px;
   }
 }

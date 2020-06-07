@@ -62,11 +62,15 @@ h1 {
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow, 0 3px 10px $shadow, 0 3px 10px $shadow;
+
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+  }
 }
 
-.mCard:hover{
-background-color: #ff7533;
-color: #fff;
+.mCard:hover {
+  background-color: #ff7533;
+  color: #fff;
 }
 
 img {

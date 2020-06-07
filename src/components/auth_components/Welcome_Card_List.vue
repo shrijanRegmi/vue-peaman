@@ -57,5 +57,13 @@ $shadow: #ebebeb;
   min-height: 200px;
   background-color: #fff;
   box-shadow: 0 0 10px $shadow, 0 0 10px $shadow, 0 0 10px $shadow, 0 0 10px $shadow;
+
+  @media screen and (max-width: 990px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (max-width: 668px) {
+    width: 100%;
+  }
 }
 </style>

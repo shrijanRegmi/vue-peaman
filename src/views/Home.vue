@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <img src="@/assets/images/home_img_sm.svg" width="100%" alt="" class="img-fluid imgSm">
     <div class="componentContainer" v-if="navigationItem === `HOME`"><HomeList /></div>
     <div class="componentContainer" v-if="navigationItem === `PROFILE`"><ProfileList /></div>
     <div class="componentContainer" v-if="navigationItem === `LEADERBOARD`"><LeaderboardList /></div>

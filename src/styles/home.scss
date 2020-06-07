@@ -4,15 +4,32 @@
   position: relative;
 }
 
-.mainImgContainer{
+.mainImgContainer {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.componentContainer{
+.componentContainer {
   padding: 40px;
 }
 
+.imgSm {
+  display: none;
+}
 
+@media screen and (max-width: 1450px) {
+  .mainImgContainer {
+    width: 50%;
+    height: auto;
+  }
+}
 
+@media screen and (max-width: 1150px) {
+  .imgSm {
+    display: block;
+  }
+  .mainImgContainer {
+    display: none;
+  }
+}

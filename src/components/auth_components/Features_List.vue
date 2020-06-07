@@ -1,8 +1,8 @@
 <template>
   <div class="featureList">
     <div class="content text-white">
-      <div class="mRow mb-5 d-flex" v-for="item in items" :key="item.id">
-        <div class="mCol">
+      <div class="mRow mb-5 d-xl-flex" v-for="item in items" :key="item.id">
+        <div class="mCol mb-3 mb-xl-0">
           <div class="imgContainer mr-3"></div>
         </div>
         <div class="mCol">
@@ -48,6 +48,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media screen and (max-width: 1200px){
+  .featureList{
+    margin-top: 50px;
+  }
+}
 .imgContainer{
   width: 80px;
   height: 80px;

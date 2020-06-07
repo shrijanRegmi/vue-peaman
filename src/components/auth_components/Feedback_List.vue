@@ -63,11 +63,17 @@ $shadow: #ebebeb;
 }
 .content {
   position: relative;
-  min-height: 300px;
   padding: 30px;
   border-radius: 10px;
   background-color: #fff;
   box-shadow: 0 0 10px $shadow, 0 0 10px $shadow, 0 0 10px $shadow, 0 0 10px $shadow;
+  @media screen and (max-width: 1200px) {
+    margin-bottom: 100px;
+  }
+
+  @media screen and (max-width: 668px) {
+    width: 100%;
+  }
 }
 
 .imgContainer {
@@ -81,6 +87,10 @@ $shadow: #ebebeb;
 
 .intro {
   margin-left: 140px;
+  @media screen and (max-width: 500px) {
+    margin-left: 0px;
+    margin-top: 80px;
+  }
 }
 p {
   color: #707070;

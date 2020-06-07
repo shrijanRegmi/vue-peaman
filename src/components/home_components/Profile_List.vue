@@ -61,6 +61,9 @@ h1 {
     padding: 0px;
     margin-left: 20px;
   }
+  @media screen and (max-width: 1150px) {
+    width: 100%;
+  }
 }
 
 img {

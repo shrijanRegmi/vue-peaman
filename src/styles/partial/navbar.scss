@@ -17,10 +17,6 @@ ul {
   width: 100%;
 }
 
-.tabContainer {
-  justify-content: flex-start;
-}
-
 li {
   margin: 0px 5px;
 }
@@ -37,8 +33,9 @@ span {
 }
 
 .tabs {
-  margin-left: 100px;
-  span:hover, a:hover {
+  margin-right: 20%;
+  span:hover,
+  a:hover {
     border-bottom: 1.5px solid #ff7533;
   }
 }
@@ -65,12 +62,91 @@ span {
 .btns {
   ul {
     :nth-child(2) {
-     a {
+      a {
         background-color: #ff7533;
         color: #fff;
         padding: 10px 25px;
         border-radius: 5px;
       }
     }
+  }
+}
+
+#menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: flex-end;
+  .line {
+    height: 4px;
+    width: 40px;
+    border-radius: 20px;
+    background-color: #00a396;
+    margin: 3px 0px;
+  }
+  .line1 {
+    width: 35px;
+  }
+  .line3 {
+    width: 25px;
+  }
+}
+
+@media screen and (max-width: 1268px) {
+  .brandContainer {
+    width: 100%;
+    ul {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  .btns {
+    display: none;
+  }
+
+  .navbar-collapsed {
+    height: 260px;
+    align-items: flex-start;
+    padding-top: 13px;
+  }
+
+  .tabs {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    margin-top: 50px;
+    width: 100%;
+    ul {
+      display: flex !important;
+      flex-direction: column !important;
+      a,
+      span {
+        border: none !important;
+      }
+      li {
+        margin: 10px 0px;
+      }
+    }
+  }
+
+  .tabContainer {
+    justify-content: space-between;
+  }
+
+  .mainNav {
+    align-items: flex-start;
+  }
+
+  #menu {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 1268px) {
+  .tabs {
+    display: flex !important;
   }
 }
