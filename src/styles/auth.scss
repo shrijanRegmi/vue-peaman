@@ -1,0 +1,39 @@
+#landingSection {
+  background-color: #f6f8fc;
+  z-index: -1;
+  .row {
+    height: 100%;
+  }
+  .content {
+    width: 75%;
+    margin-bottom: 20px;
+  }
+}
+
+#welcomeSection {
+  margin: 200px 0px;
+  p {
+    font-weight: bold;
+    color: #78899d;
+  }
+}
+
+#expertiseSection {
+  background-color: #f3f3f3;
+  margin-top: 200px;
+  padding: 100px 0px 120px 0px;
+  p {
+    font-weight: bold;
+    color: #78899d;
+  }
+}
+
+#featureSection {
+  background-color: #ff7533;
+  padding: 200px 50px;
+}
+
+#feedbackSection {
+  padding: 100px 0px;
+  background-color: #f3f3f3;
+}
