@@ -131,25 +131,25 @@ export default {
 }
 
 .imgContainer1 {
-  background-image: url('../../assets/images/carousel/carousel1.svg');
+  background-image: url('../../assets/images/carousel/carousel1.jpg');
   background-position: top;
 }
 
 .imgContainer2 {
-  background-image: url('../../assets/images/carousel/carousel2.svg');
+  background-image: url('../../assets/images/carousel/carousel2.jpg');
 }
 
 .imgContainer3 {
-  background-image: url('../../assets/images/carousel/carousel3.svg');
+  background-image: url('../../assets/images/carousel/carousel3.jpg');
   background-position-y: 100%;
 }
 
 .imgContainer4 {
-  background-image: url('../../assets/images/carousel/carousel4.svg');
+  background-image: url('../../assets/images/carousel/carousel4.jpg');
 }
 
 .imgContainer5 {
-  background-image: url('../../assets/images/carousel/carousel5.svg');
+  background-image: url('../../assets/images/carousel/carousel5.jpg');
 }
 
 .carousel-indicators li {

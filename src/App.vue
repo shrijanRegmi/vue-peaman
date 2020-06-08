@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <Navbar />
-    <router-view />
-    <Footer/>
+    <div v-cloak>
+      <Navbar />
+      <router-view />
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -29,6 +31,10 @@ export default {
   height: 100vh;
   min-height: 100vh;
   overflow-x: hidden;
+}
+
+[v-cloak] {
+  display: none;
 }
 
 h2 {

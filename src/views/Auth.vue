@@ -61,7 +61,7 @@
     <section id="featureSection">
       <div class="row">
         <div class="col-xl-6">
-          <img class="img-fluid" src="@/assets/images/middle_img.svg" alt="" />
+          <img class="img-fluid" src="@/assets/images/middle_img.jpg" alt="" />
         </div>
         <div class="col-xl-6">
           <FeaturesList />
