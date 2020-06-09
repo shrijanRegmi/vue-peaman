@@ -2,11 +2,13 @@
   <div class="homeList">
     <h1 class="font-weight-bold">Home</h1>
     <div class="mCard" v-for="item in items" :key="item.id">
-      <img src="@/assets/images/container_top.svg" class="img-fluid" alt="" />
-      <h5 class="font-weight-bold">
-        {{ item.title }}
-      </h5>
-      <p>{{ item.details }}</p>
+      <router-link to="/play">
+        <img src="@/assets/images/container_top.svg" class="img-fluid" alt="" />
+        <h5 class="font-weight-bold">
+          {{ item.title }}
+        </h5>
+        <p>{{ item.details }}</p>
+      </router-link>
     </div>
   </div>
 </template>
@@ -63,6 +65,11 @@ h1 {
   background-color: #fff;
   box-shadow: 0 3px 10px $shadow, 0 3px 10px $shadow, 0 3px 10px $shadow, 0 3px 10px $shadow;
 
+  a {
+    color: #303938;
+    text-decoration: none;
+  }
+
   @media screen and (max-width: 1150px) {
     width: 100%;
   }
@@ -70,7 +77,10 @@ h1 {
 
 .mCard:hover {
   background-color: #ff7533;
-  color: #fff;
+
+  a {
+    color: #fff;
+  }
 }
 
 img {
