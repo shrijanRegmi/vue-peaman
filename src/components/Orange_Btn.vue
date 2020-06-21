@@ -1,6 +1,8 @@
 <template>
   <div class="orangeBtn">
-    <button><p>{{ title }}</p></button>
+    <button @click="onPressedBtn">
+      <p>{{ title }}</p>
+    </button>
   </div>
 </template>
 
@@ -9,12 +11,12 @@ export default {
   name: 'OrangeBtn',
   props: {
     title: String,
-    onPress: Function,
     id: String,
+    onPressedBtn: Function,
   },
 };
 </script>
 
 <style lang="scss">
-@import "@/styles/partial/orange_btn.scss";
+@import '@/styles/partial/orange_btn.scss';
 </style>

@@ -62,11 +62,15 @@ span {
 .btns {
   ul {
     :nth-child(2) {
-      a {
+      a , button{
         background-color: #ff7533;
         color: #fff;
         padding: 10px 25px;
         border-radius: 5px;
+        border: none;
+      }
+      button:focus{
+        outline: none;
       }
     }
   }

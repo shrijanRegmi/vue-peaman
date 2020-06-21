@@ -1,7 +1,7 @@
 <template>
   <div class="auth-field">
     <p>{{ title }}</p>
-    <input :type="type" />
+    <input :type="type" v-model="inputVal" @input="onValChanged" required />
   </div>
 </template>
 
@@ -11,6 +11,16 @@ export default {
   props: {
     title: String,
     type: String,
+  },
+  data: function() {
+    return {
+      inputVal: '',
+    };
+  },
+  methods: {
+    onValChanged() {
+      this.$emit('onValChanged', this.inputVal);
+    },
   },
 };
 </script>

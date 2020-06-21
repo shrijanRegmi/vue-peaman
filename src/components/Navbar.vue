@@ -1,6 +1,6 @@
 <template>
   <div class="navbar">
-    <ul v-if="source" class="mainNav mainNav1">
+    <ul v-if="!user.uid" class="mainNav mainNav1">
       <li class="brandContainer">
         <ul>
           <li class="brand">
@@ -37,7 +37,7 @@
       </li>
     </ul>
 
-    <ul class="mainNav mainNav1">
+    <ul v-else class="mainNav mainNav1">
       <li class="brandContainer">
         <ul>
           <li class="brand">
@@ -68,8 +68,8 @@
 
       <li class="btns">
         <ul>
-          <li><router-link to="/">Login</router-link></li>
-          <li><router-link to="/">Register</router-link></li>
+          <li><router-link to="/">Support</router-link></li>
+          <li><button @click="logOutUser">Logout</button></li>
         </ul>
       </li>
     </ul>
@@ -78,14 +78,18 @@
 
 <script>
 import { mapActions } from 'vuex';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Navbar',
   props: {
     source: String,
   },
+  computed: {
+    ...mapGetters(['user']),
+  },
   methods: {
-    ...mapActions(['changeNavigationItem']),
+    ...mapActions(['changeNavigationItem', 'logOutUser']),
     onPressItem(newVal) {
       this.changeNavigationItem(newVal);
       this.onPressMenu();
@@ -101,6 +105,9 @@ export default {
         navbar.classList.remove('navbar-collapsed');
         tabs.style.display = 'none';
       }
+    },
+    logoutUser() {
+      this.logOutUser();
     },
   },
 };

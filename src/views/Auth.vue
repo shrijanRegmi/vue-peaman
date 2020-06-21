@@ -10,19 +10,70 @@
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio aut, assumenda nam laboriosam facere
             </p>
             <div class="auth-btns d-flex mt-5">
-              <h5 class="font-weight-bold mr-5">
-                Register
-              </h5>
-              <h5 class="font-weight-bold">
-                Login
-              </h5>
+              <button @click="onPressAuthBtn('REGISTER')" class="btnAuth registerBtn">
+                <h5 class="font-weight-bold">Register</h5>
+              </button>
+              <button @click="onPressAuthBtn('LOGIN')" class="btnAuth loginBtn">
+                <h5 class="font-weight-bold">
+                  Login
+                </h5>
+              </button>
             </div>
             <hr class="mb-5" />
-            <AuthField title="Username" type="text" />
-            <AuthField title="Email" type="email" />
-            <AuthField title="Password" type="password" />
+            <form action="" @submit.prevent="onPressedRegisterBtn" id="registerForm" v-if="authMode === 'REGISTER'">
+              <AuthField
+                title="Username"
+                type="text"
+                @onValChanged="
+                  (val) => {
+                    this.username = val;
+                  }
+                "
+              />
+              <AuthField
+                title="Email"
+                type="email"
+                @onValChanged="
+                  (val) => {
+                    this.email = val;
+                  }
+                "
+              />
+              <AuthField
+                title="Password"
+                type="password"
+                @onValChanged="
+                  (val) => {
+                    this.password = val;
+                  }
+                "
+              />
+              <p class="text-danger text-center mt-3" v-if="errMessage">{{ errMessage }}</p>
+              <OrangeBtn title="REGISTER" id="register_btn" :onPressedBtn="onPressedRegisterBtn" class="mt-3" />
+            </form>
 
-            <router-link to="/home"><OrangeBtn title="REGISTER" class="mt-5"/></router-link>
+            <form action="" @submit.prevent="onPressedLoginBtn" id="loginForm" v-else>
+              <AuthField
+                title="Email"
+                type="email"
+                @onValChanged="
+                  (val) => {
+                    this.email = val;
+                  }
+                "
+              />
+              <AuthField
+                title="Password"
+                type="password"
+                @onValChanged="
+                  (val) => {
+                    this.password = val;
+                  }
+                "
+              />
+              <p class="text-danger text-center mt-3" v-if="errMessage">{{ errMessage }}</p>
+              <OrangeBtn title="LOGIN" id="login_btn" :onPressedBtn="onPressedLoginBtn" class="mt-3" />
+            </form>
           </div>
         </div>
         <div class="col-xl-7">
@@ -92,6 +143,9 @@ import WelcomeCardList from '@/components/auth_components/Welcome_Card_List.vue'
 import ExpertiseCardList from '@/components/auth_components/Expertise_Card_List.vue';
 import FeaturesList from '@/components/auth_components/Features_List.vue';
 import FeedbackList from '@/components/auth_components/Feedback_List.vue';
+
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
   components: {
     AuthField,
@@ -101,6 +155,42 @@ export default {
     ExpertiseCardList,
     FeaturesList,
     FeedbackList,
+  },
+  data: function() {
+    return {
+      username: '',
+      email: '',
+      password: '',
+      authMode: 'REGISTER',
+    };
+  },
+  computed: {
+    ...mapGetters(['user', 'errMessage']),
+  },
+  methods: {
+    ...mapActions(['loginUser','registerUser']),
+    onPressedLoginBtn() {
+      if (this.password != '' && this.email != '') {
+        const cred = {
+          email: this.email,
+          password: this.password,
+        };
+        this.loginUser(cred);
+      }
+    },
+    onPressedRegisterBtn() {
+      if (this.username != '' && this.password != '' && this.email != '') {
+        const cred = {
+          username: this.username,
+          email: this.email,
+          password: this.password,
+        };
+        this.registerUser(cred);
+      }
+    },
+    onPressAuthBtn(newAuthMode) {
+      this.authMode = newAuthMode;
+    },
   },
 };
 </script>

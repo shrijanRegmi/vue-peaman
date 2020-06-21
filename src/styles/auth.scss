@@ -8,6 +8,28 @@
     width: 75%;
     margin-bottom: 20px;
   }
+
+  .btnAuth {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1.5px solid transparent;
+    padding: 15px 0px;
+    min-width: 125px;
+    text-align: left;
+  }
+
+  .btnAuth:hover {  
+    border-bottom: 1.5px solid #ff7533;
+  }
+
+  .btnAuth:focus {
+    outline: none;
+  }
+
+  hr {
+    margin: 0px;
+  }
+
   @media screen and (max-width: 1200px) {
     .content {
       width: 100%;

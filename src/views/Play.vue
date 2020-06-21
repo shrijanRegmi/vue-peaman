@@ -27,7 +27,7 @@ export default {
   },
   data: function() {
     return {
-      bool: true,
+      bool: false,
     };
   },
 };
